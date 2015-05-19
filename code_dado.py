@@ -53,7 +53,7 @@ def get_file_with_tags_omitted(source_file, valid_tag_names):
             if start_of_begin_delimiter in line and end_of_begin_delimiter in line:
                 if line.strip().index(start_of_begin_delimiter) == 0 and \
                         line.strip().index(end_of_begin_delimiter) == len(line.strip()) - len(end_of_begin_delimiter):
-                    tag = line.strip()[len(start_of_begin_delimiter):line.index(end_of_begin_delimiter)]
+                    tag = line.strip()[len(start_of_begin_delimiter):line.strip().index(end_of_begin_delimiter)]
                     print ('Found Tag: ' + tag)
                     if tag not in valid_tag_names:
                         print ('Omitting Tag: ' + tag)
